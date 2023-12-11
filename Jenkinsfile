@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     def markerOption = params.marker ? "-m ${params.marker}" : ""
-                    sh 'chmod +x run.sh'
+                    sh 'chmod +x run_unix.sh'
                     sh 'tr -d "\\r" < run.sh > run_unix.sh'  // Convert line endings
                     sh 'chmod +x run_unix.sh'
                     sh "export PATH=\$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin/pytest"  // Replace with the actual path
