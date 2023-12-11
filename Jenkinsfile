@@ -29,6 +29,7 @@ pipeline {
                     sh 'chmod +x run.sh'
                     sh 'tr -d "\\r" < run.sh > run_unix.sh'  // Convert line endings
                     sh 'chmod +x run_unix.sh'
+                    sh "export PATH=\$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin/pytest"  // Replace with the actual path
                     sh "./run_unix.sh -m ${markerOption} --url ${params.url} ${params.path}"
                 }
             }
