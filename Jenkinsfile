@@ -27,8 +27,9 @@ pipeline {
                 script {
                     def markerOption = params.marker ? "-m ${params.marker}" : ""
                     sh 'chmod +x run.sh'
-                    sh 'dos2unix run.sh' // Convert line endings
-                    sh "./run.sh -m ${markerOption} --url ${params.url} ${params.path}"
+                    sh 'tr -d "\\r" < run.sh > run_unix.sh'  // Convert line endings
+                    sh 'chmod +x run_unix.sh'
+                    sh "./run_unix.sh -m ${markerOption} --url ${params.url} ${params.path}"
                 }
             }
         }
