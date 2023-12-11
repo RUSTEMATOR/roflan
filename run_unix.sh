@@ -1,3 +1,2 @@
 #!/bin/bash
-/Library/Frameworks/Python.framework/Versions/3.11/bin/pytest "$@"
-pytest -v test_my_site.py
+python3 /Users/rustemsamoilenko/Desktop/roflan_ebLA/test_my_site.py "$@"
