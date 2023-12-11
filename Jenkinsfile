@@ -3,8 +3,8 @@ pipeline {
 
     parameters {
         string(name: 'branch', defaultValue: 'main', description: 'Branch to build from')
-        string(name: 'url', defaultValue: 'https://example.com', description: 'URL to test')
-        string(name: 'path', defaultValue: 'tests', description: 'Path to test directory')
+        string(name: 'url', defaultValue: 'https://google.com', description: 'URL to test')
+        string(name: 'path', defaultValue: '/Users/rustemsamoilenko/Desktop/roflan_ebLA', description: 'Path to test directory')
         string(name: 'marker', defaultValue: '', description: 'Parameters for pytest mark')
     }
 
