@@ -17,6 +17,7 @@ pipeline {
 
         stage('Test Repo Setup') {
             steps {
+                bash 'sudo chmod +x install.sh'
                 sh './install.sh'
             }
         }
