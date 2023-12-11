@@ -26,6 +26,7 @@ pipeline {
             steps {
                 script {
                     def markerOption = params.marker ? "-m ${params.marker}" : ""
+                    sh 'chmod +x run.sh'
                     sh "./run.sh -m ${markerOption} --url ${params.url} ${params.path}"
                 }
             }
