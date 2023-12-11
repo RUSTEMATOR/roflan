@@ -28,7 +28,7 @@ pipeline {
                     def markerOption = params.marker ? "-m ${params.marker}" : ""
                     sh 'chmod +x run_unix.sh'
                     sh 'chmod +x run_unix.sh'
-                    sh "export PATH=\$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin/pytest"  // Replace with the actual path
+                    sh 'export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH'
                     sh "./run_unix.sh -m ${markerOption} --url ${params.url} ${params.path}"
                 }
             }
