@@ -17,6 +17,7 @@ pipeline {
 
         stage('Test Repo Setup') {
             steps {
+                #!/bin/bash
                 sh 'chmod +x install.sh'
                 sh './install.sh'
             }
@@ -24,6 +25,7 @@ pipeline {
 
         stage('Install Dependencies') {
                 steps {
+                    dir('/Users/rustemsamoilenko/Desktop/Playwright/Deposit_bible')
                     script {
                         sh 'pip3 install -r requirements.txt'  // Replace with the actual path to your requirements.txt
                     }
